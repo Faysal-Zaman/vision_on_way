@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+import '../../widgets/hero_image.dart';
+import 'localWidgets/sign_in_form.dart';
+import '../../widgets/hero_title.dart';
+
+class SignIn extends StatefulWidget {
+  const SignIn({Key? key}) : super(key: key);
+
+  @override
+  _SignInState createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Container(
+        height: MediaQuery.of(context).size.height * 1,
+        child: Column(
+          children: [
+            // shows header title
+            HeroTitle(
+              title: 'Vision onWay!',
+              subtitle: 'Fitness application...',
+            ),
+            // shows image
+            HeroImage(
+              path: 'assets/loginHero.svg',
+              sementicLabel: 'Login Hero',
+            ),
+            // shows textfields and buttons
+            SignInForm(),
+          ],
+        ),
+      ),
+    );
+  }
+}
